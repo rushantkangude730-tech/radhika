@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: linear-gradient(-45deg,
+            #ffd6e7,
+            #ffc1d6,
+            #ffb6c1,
+            #ff9eb5);
+
+    background-size: 400% 400%;
+
+    animation: gradientBG 15s ease infinite;
+
+    overflow: hidden;
+}
+
+/* Animated Background */
+
+@keyframes gradientBG {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Progress Bar */
+
+#progress {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 8px;
+
+    background: rgba(255,255,255,.25);
+
+    z-index: 9999;
+}
+
+#progressBar {
+
+    width: 10%;
+
+    height: 100%;
+
+    background: white;
+
+    transition: .5s;
+}
+
+/* Pages */
+
+.page {
+
+    width: 100vw;
+
+    height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+.active {
+
+    display: flex;
+
+    animation: fade .8s;
+}
+
+@keyframes fade {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.96);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+/* Card */
+
+.glass-card {
+
+    width: 90%;
+
+    max-width: 720px;
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.20);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    box-shadow: 0 20px 50px rgba(255,105,180,.30);
+
+    transition: .4s;
+}
+
+.glass-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 25px 70px rgba(255,20,147,.40);
+}
+
+/* Text */
+
+h1 {
+
+    color: white;
+
+    font-size: 48px;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 3px 12px rgba(255,20,147,.45);
+}
+
+h2 {
+
+    color: white;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+h3 {
+
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+p {
+
+    color: white;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.finalText {
+
+    font-size: 22px;
+
+    line-height: 1.9;
+}
+
+/* Buttons */
+
+button {
+
+    padding: 15px 35px;
+
+    margin: 10px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: linear-gradient(45deg,
+            #ff4f87,
+            #ff6fa5);
+
+    transition: .35s;
+
+    box-shadow: 0 12px 30px rgba(255,20,147,.35);
+}
+
+button:hover {
+
+    transform: translateY(-4px) scale(1.05);
+
+    box-shadow: 0 18px 40px rgba(255,20,147,.45);
+}
+
+/* Photo */
+
+.photo {
+
+    width: 320px;
+
+    height: 320px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 8px solid white;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 0 35px rgba(255,255,255,.8);
+
+    transition: .5s;
+}
+
+.photo:hover {
+
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* Music */
+
+#musicBtn {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    z-index: 999;
+}
+
+/* No Button */
+
+#noBtn {
+
+    transition: .2s;
+}
+
+/* Floating Hearts */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -40px;
+
+    font-size: 28px;
+
+    pointer-events: none;
+
+    animation: rise linear forwards;
+}
+
+@keyframes rise {
+
+    from {
+
+        transform: translateY(0) scale(.7);
+
+        opacity: 1;
+    }
+
+    to {
+
+        transform: translateY(-120vh) scale(1.8);
+
+        opacity: 0;
+    }
+}
+
+/* Sparkles */
+
+.sparkle {
+
+    position: fixed;
+
+    color: white;
+
+    pointer-events: none;
+
+    animation: sparkle 2s linear forwards;
+}
+
+@keyframes sparkle {
+
+    from {
+
+        opacity: 1;
+
+        transform: scale(.5);
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform: scale(2);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .glass-card{
+
+        padding:30px;
+    }
+
+    h1{
+
+        font-size:34px;
+    }
+
+    h2{
+
+        font-size:26px;
+    }
+
+    h3{
+
+        font-size:20px;
+    }
+
+    p{
+
+        font-size:18px;
+    }
+
+    .photo{
+
+        width:220px;
+
+        height:220px;
+    }
+
+    button{
+
+        width:100%;
+    }
+}
